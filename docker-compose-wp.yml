@@ -17,13 +17,15 @@ services:
     volumes:
       - wp_data:/var/www/html
     ports:
-      - "8080:80"
+      - "49158:80"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wpuser
       WORDPRESS_DB_PASSWORD: wppassword
       WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_SITEURL: http://domain
+      WORDPRESS_HOME: http://domain
 
 volumes:
   db_data:
